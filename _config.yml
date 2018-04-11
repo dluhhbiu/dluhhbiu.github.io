@@ -1,0 +1,30 @@
+# Site settings
+title:          'Some useful information'
+description:    'Some useful information about everything'
+baseurl:        ''
+url:            ''
+
+# Author
+author:
+  name:         dluhhbiu
+  url:          https://dluhhbiu.github.io
+  email:        dluhhbiu@gmail.com
+  github:       dluhhbiu
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+remote_theme: chesterhow/tale
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       10
