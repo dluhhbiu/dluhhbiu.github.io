@@ -12,9 +12,11 @@ No plugins required.
 
 import glob
 import os
+import re
 
 post_dir = '_posts/'
 tag_dir = 'tag/'
+pattern = re.compile('[A-z]+:')
 
 filenames = glob.glob(post_dir + '*md')
 
@@ -23,18 +25,14 @@ for filename in filenames:
     f = open(filename, 'r', encoding="utf8")
     crawl = False
     for line in f:
+        if crawl and (line.strip() == '---' or pattern.match(line.strip())):
+            crawl = False
+            break
         if crawl:
-            current_tags = line.strip().split()
-            if current_tags[0] == 'tags:':
-                total_tags.extend(current_tags[1:])
-                crawl = False
-                break
-        if line.strip() == '---':
-            if not crawl:
-                crawl = True
-            else:
-                crawl = False
-                break
+            tag = line.strip().split('- ')[1]
+            total_tags.append(tag)
+        if line.strip() == 'tags:':
+            crawl = True
     f.close()
 total_tags = set(total_tags)
 
