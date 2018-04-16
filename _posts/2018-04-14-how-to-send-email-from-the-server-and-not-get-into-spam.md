@@ -10,6 +10,8 @@ tags:
  - gmail
 ---
 
+Sometimes people needs send email from their apps. You can use Amazon SES (very cheap), Mailchimp (more expensive), etc. But if you want send email for free, you will need send email from your server. When you start send emails from your server, you will be sure to get into spam. This article will help to avoid this.
+
 ### What I want
  - Sending emails from the server
  - Pass spam filters
