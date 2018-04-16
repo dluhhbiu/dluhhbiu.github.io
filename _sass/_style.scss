@@ -1,15 +1,13 @@
 $white-gray: #e5e5e5;
 
 .post {
-  border-bottom: .5px solid $white-gray;
-  margin: 0 0 3rem;
-  padding: 3rem 0 0;
+  font-family: Arial;
 
   .tag:hover {
     text-decoration: none;
   }
 }
 
-.pagination {
-  border: 0;
+div.highlight {
+  padding: 0;
 }

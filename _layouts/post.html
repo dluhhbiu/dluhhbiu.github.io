@@ -6,17 +6,17 @@ layout: default
     <div class="post-info">
         <span>Written by</span>
         {% if page.author %}
-        {{ page.author }}
+            {{ page.author }}
         {% else %}
-        {{ site.author.name }}
+            {{ site.author.name }}
         {% endif %}
 
         {% if page.date %}
-        <br>
-        <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            <br>
+            <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
         {% endif %}
         {% if page.tags %}
-        <div>[
+            <div>[
             {% for tag in page.tags %}
                 {% capture tag_name %}{{ tag }}{% endcapture %}
                 <a href="/tag/{{ tag_name }}" class="tag"><code><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
@@ -29,19 +29,17 @@ layout: default
     <div class="post-line"></div>
 
     {{ content }}
-
+    {% if page.comments %}
+        {% include disqus.html %}
+    {% endif %}
 </div>
-
-{% if page.comments %}
-    {% include disqus.html %}
-{% endif %}
 
 <div class="pagination">
     {% if page.next.url %}
-    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+        <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
     {% endif %}
     {% if page.previous.url %}
-    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+        <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
     {% endif %}
 
     <a href="#" class="top">Top</a>
