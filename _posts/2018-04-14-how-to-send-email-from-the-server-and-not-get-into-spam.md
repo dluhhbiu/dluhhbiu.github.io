@@ -10,7 +10,7 @@ tags:
  - gmail
 ---
 
-Sometimes people needs send email from their apps. You can use Amazon SES (very cheap), Mailchimp (more expensive), etc. But if you want send email for free, you will need send email from your server. When you start send emails from your server, you will be sure to get into spam. This article will help to avoid this.
+Sometimes people need to send email from their apps. You can use Amazon SES (very cheap), Mailchimp (more expensive), etc. But if you want to send an email for free, you will need to send an email from your server. When you start to send emails from your server, you will be sure to get into spam. This article will help to avoid this.
 
 ### What I want
  - Sending emails from the server
@@ -23,7 +23,7 @@ Sometimes people needs send email from their apps. You can use Amazon SES (very 
 apt update
 apt install mailutils -y
 ```
-Select `Internet Site`. And write your domain in next step. For example, I will use `example.com`
+Select `Internet Site`. And write your domain in the next step. For example, I will use `example.com`
 
 ### SPF
 Create txt record
@@ -96,7 +96,7 @@ service opendkim restart
 ```
 
 ### DNS
-Creating A record for subdomain
+Creating A record for a subdomain
 ```bash
 тип: A
 имя: mail._domainkey
@@ -120,12 +120,12 @@ opendkim-testkey: checking key 'mail._domainkey.example.com'
 opendkim-testkey: key not secure
 opendkim-testkey: key OK
 ```
-Great! Your email server working now. But sometimes these actions are not enough. And your mail still catch into spam. This [site](https://www.mail-tester.com/){:target="_blank"} can helps you. 
+Great! Your email server working now. But sometimes these actions are not enough. And your mail still catches into spam. This [site](https://www.mail-tester.com/){:target="_blank"} can helps you. 
 
-Send email from your server to `mail-tester`. And fix errors which `mail-tester` find.
+Send an email from your server to `mail-tester`. And fix errors which `mail-tester` find.
 ```bash
 echo "Test Email message body" | mail -s "Email test subject" -aFrom:testemail@example.com besthopox@gmail.com
 ```
 
-**When I writing the article, I used next materials:**
+**When writing the article, I used next materials:**
  - [https://wiki.debian.org/opendkim](https://wiki.debian.org/opendkim){:target="_blank"}
