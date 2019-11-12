@@ -7,4 +7,4 @@ git clone git@github.com:dluhhbiu/dluhhbiu.github.io.git
 bundle install --path=vendor/bundle
 bundle exec jekyll serve
 ```
-Use `python tag_generator.py ` before each commit
+Use `python3 tag_generator.py ` before each commit
