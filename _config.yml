@@ -24,6 +24,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-remote-theme
+  - jekyll-sitemap
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
