@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to solve problem with PostgreSQL which is not running on Mac
-date: 2019-11-12 17:29:14 +0300
+date: 2019-11-18 16:08:14 +0300
 comments: true
 tags: 
  - macos 
